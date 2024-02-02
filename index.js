@@ -96,7 +96,7 @@ app.get("/prices/:prices", filterByPrice);
 //not returning
 const filterByCuisines = (request, response) => {
     const cuisines = parse(request.params.cuisines);
-    const query = `SELECT * FROM restaurants WHERE "cuisines" LIKE "%?%"`;
+    const query = `SELECT * FROM restaurants WHERE "Cuisines" LIKE "%?%"`;
    
    
     db.get(query, [cuisines], (error, result) => {
