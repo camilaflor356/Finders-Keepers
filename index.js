@@ -53,7 +53,7 @@ const filterByRatings = (request, response) => {
     const query = `SELECT * FROM restaurants WHERE "Aggregate rating" = ?`;
    
    
-    db.get(query, [ratings], (error, result) => {
+    db.all(query, [ratings], (error, result) => {
       if (error) {
         console.error(error.message);
         response.status(400).json({ error: error.message });
@@ -76,7 +76,7 @@ const filterByPrice = (request, response) => {
     const query = `SELECT * FROM restaurants WHERE "price range" = ?`;
    
    
-    db.get(query, [prices], (error, result) => {
+    db.all(query, [prices], (error, result) => {
       if (error) {
         console.error(error.message);
         response.status(400).json({ error: error.message });
@@ -95,11 +95,11 @@ app.get("/prices/:prices", filterByPrice);
 
 //not returning
 const filterByCuisines = (request, response) => {
-    const cuisines = parse(request.params.cuisines);
-    const query = `SELECT * FROM restaurants WHERE "Cuisines" LIKE "%?%"`;
+  const cuisines = '%' + (request.params.cuisines) + '%';
+  const query = `SELECT * FROM restaurants WHERE "Cuisines" LIKE ?`;   
    
    
-    db.get(query, [cuisines], (error, result) => {
+    db.all(query, [cuisines], (error, result) => {
       if (error) {
         console.error(error.message);
         response.status(400).json({ error: error.message });
@@ -125,5 +125,5 @@ const filterByCuisines = (request, response) => {
 
 
 app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`);
+    console.log(`Listening on port http://localhost:4000`);
   });
