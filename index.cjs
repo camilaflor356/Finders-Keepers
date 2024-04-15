@@ -1,12 +1,14 @@
 //-----------------------------
 // #region Setup
 //-----------------------------
-const express = require("express");
+import express from 'express';
+
 const app = express();
 const PORT = 4000;
 
-const path = require("path");
-const sqlite = require("sqlite3").verbose();
+import path from 'path';
+import sqlite from 'sqlite3';
+
 
 //#endregion Setup
 
