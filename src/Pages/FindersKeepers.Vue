@@ -4,13 +4,11 @@
 
 
 <template>
-    <select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-
+<!--- Change 'Select' and make one for each category (cuisine, rating, price etc.)-->
+<v-select
+  label="Select" 
+  :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+></v-select>
 </template>
 
 
