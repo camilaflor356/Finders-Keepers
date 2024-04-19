@@ -4,6 +4,7 @@
 
 
 <template>
+<p>Hello there</p>
 <!--- Change 'Select' and make one for each category (cuisine, rating, price etc.)-->
 <v-select
   label="Select" 
