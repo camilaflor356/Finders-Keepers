@@ -1,18 +1,28 @@
 <script>
-
+import Header from '../components/Header.vue'
+export default {
+    components: {
+        Header
+    }
+}
 </script>
 
 
 <template>
-<p>Hello there</p>
+
 <!--- Change 'Select' and make one for each category (cuisine, rating, price etc.)-->
 <v-select
-  label="Select" 
+  label="Cuisine" 
   :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
 ></v-select>
+<br>
 </template>
 
 
 <style>
-
+v-select {
+  /* edit width */
+  color:blue;
+  width: 20pt;
+}
 </style>

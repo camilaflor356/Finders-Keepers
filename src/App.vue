@@ -34,9 +34,9 @@ export default {
 <template>
   <!-- 4. change this to be a dynamic component, and add :is="currentPath" as a directive -->
   <!-- <component :is="currentPath" /> -->
-  <RouterView/>
   <RouterLink to="/">Go to Home</RouterLink>
   <RouterLink to="/finderskeepers">Go to FindersKeepers</RouterLink>
+  <RouterView/>
 </template>
 
 <style></style>
