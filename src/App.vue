@@ -2,7 +2,9 @@
 import FindersKeepers from './Pages/FindersKeepers.vue'
 import Details from './Pages/Details.vue'
 import Home from './Pages/Homepage.vue'
+import Header from './components/Header.vue'
 
+//command, option i for the chrome thingy to see fails
 // hi y'all, going to number the changes (there are 4) so it's clear to you. 
 // 1. create a routes object with all your navbar routes
 // see https://vuejs.org/guide/scaling-up/routing.html#simple-routing-from-scratch
@@ -26,17 +28,16 @@ export default {
   components: {
    FindersKeepers,
    Details,
-   Home
+   Home,
+   Header
   }
 }
 </script>
 
 <template>
-  <!-- 4. change this to be a dynamic component, and add :is="currentPath" as a directive -->
-  <!-- <component :is="currentPath" /> -->
-  <RouterLink to="/">Go to Home</RouterLink>
-  <RouterLink to="/finderskeepers">Go to FindersKeepers</RouterLink>
-  <RouterView/>
+      <Header />
 </template>
 
-<style></style>
+<style>
+
+</style>

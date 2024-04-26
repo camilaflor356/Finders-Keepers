@@ -9,10 +9,12 @@ export default {
 
 
 <template>
-
+    <header class="Home-header">
+        <h2>FindersKeepers</h2>
+    </header>
 <!--- Change 'Select' and make one for each category (cuisine, rating, price etc.)-->
-<v-select
-  label="Cuisine" 
+<v-select class ="dropdowns"
+  label="Select a Cuisine" 
   :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
 ></v-select>
 <br>
@@ -20,9 +22,9 @@ export default {
 
 
 <style>
-v-select {
-  /* edit width */
-  color:blue;
-  width: 20pt;
+.dropdowns {
+  width:30%;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 </style>
