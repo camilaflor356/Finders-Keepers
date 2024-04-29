@@ -14,17 +14,30 @@ export default {
     </header>
 <!--- Change 'Select' and make one for each category (cuisine, rating, price etc.)-->
 <v-select class ="dropdowns"
-  label="Select a Cuisine" 
-  :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+  label="Select a Country" 
+  :items="['India', 'Australia', 'Brazil', 'Canada', 'Indonesia', 'New Zealand', 'Phillipines', 'Qatar', 'Singapore', 'South Africa', 'Sri Lanka', 'Turkey', 'United Arab Emirates', 'United Kingdom', 'United States']"
 ></v-select>
-<br>
+<v-select class ="dropdowns"
+  label="Select a Cuisine" 
+  :items="['Bar Food', "Cafe", "Desserts", "Beverages", "Italian", "Japanese", "Indian", "American", "Fast Food"]"
+></v-select>
+<v-select class ="dropdowns"
+  label= "Select a Price Range" 
+  :items="['1', '2', '3', '4']"
+></v-select>,
+<v-select class ="dropdowns"
+  label="Select a Rating" 
+  :items="['0-1', '1-2', '2-3', '3-4']"
+></v-select>
 </template>
 
 
 <style>
 .dropdowns {
-  width:30%;
+  width:23%;
   font-family: Arial, Helvetica, sans-serif;
+  float: left;
+  margin:1%;
 }
 
 </style>
