@@ -15,7 +15,7 @@ export default {
         <br>
         <h2>Home</h2>
         <div class= "home-body">
-            <br>
+            
             <p>FindersKeepers that helps you filter through restaurants all over the world based on your preferences!</p>
             <br>
             <p>Go to the FindersKeepers tab, select your preferences using the dropdown menus and look through your results.</p>
@@ -32,6 +32,7 @@ export default {
 .home-body{
     font-family: 'Courier New', Courier, monospace;
     background-color: #EFEBCE;
+    margin: 3%;
 }
 body{
     background-color: #EFEBCE;
@@ -41,7 +42,7 @@ body{
     text-decoration: #BB8588 dotted underline;
 }
 h2{
-  margin-top:0%;
+  margin-top:1%;
   text-align: center;
   text-decoration: #D8A48F underline;
 }
