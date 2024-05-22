@@ -1,3 +1,8 @@
+# Finders Keepers
+
+This website allows you to filter through a database of restaurants around the world according to your country, price, cuisine and rating preferences. 
+Go to "FindersKeepers" on the navigation bar and then select all of your preferences. If you do not have preferences for one section just select "Any" in the dropdown menu for that category. After you've selected your preferences, press the button "Show Restaurants" to display the recommended restaurants that fit your preferences.
+
 # vue-project
 
 This template should help get you started developing with Vue 3 in Vite.

@@ -134,8 +134,9 @@ export default {
 
     <!-- TODO: show all restaurants here -->
     <div v-for="r in restaurants">
-      {{  r['Restaurant Name'] }} 
-      {{ r['Price range'] }}
+      <p> {{ r['Restaurant Name'] }}</p>
+      <p id="restaurantNameP" >Country: {{  countryCodes(r['Country Code']) }} | Price Range: {{ r['Price range'] }} | Rating: {{ r['Aggregate rating'] }} </p>
+      <br>
       <!-- map prices back -->
     </div>
   </body>
@@ -159,6 +160,10 @@ header {
   float: left;
   margin-left: 1.68%;
   margin-top: 3.5%;
+}
+
+#restaurantNameP{
+  text-decoration: #A3A380 overline;
 }
 
 body {
