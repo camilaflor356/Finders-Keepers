@@ -39,7 +39,7 @@ body{
 }
 #happy-eating{
     text-align: center;
-    text-decoration: #BB8588 dotted underline;
+    text-decoration: #A3A380 dotted underline;
 }
 h2{
   margin-top:1%;

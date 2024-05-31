@@ -47,12 +47,39 @@ const db = new sqlite.Database(dbFile, (error) => {
 });
 
 
-//begin endpoints//
+//begin endpoints//\
+
+//app.get("/finderskeepers/:country/:cuisines/:prices/:rating", functions);
+
+function getFilters(req, res) {
+  const query = "SELECT * FROM restaurants";
+  const filters = "";
+  if (country != "any") {
+    for (let key in arr) {
+      if (arr.hasOwnProperty(key)) {
+          // Printing Keys
+          console.log(key);
+      }
+  // make sure keys are shown
+    filters += "Where 'country code' = ?"
+  }}
+  if (cuisines != "any") {
+    filters += "Where cuisines = ?"
+  }
+  if (prices != "any") {
+    filters += "Where 'price range' = ?"
+  }
+  if (ratings != "any") {
+    filters += "Where 'price range' = ?"
+  }
+}
+
+
 
 //only returns one row
 //0-5
-const filterByRatings = (request, response) => {
-    const ratings = parseInt(request.params.ratings);
+const filterByRatings = (ratingDropdown, response) => {
+    const ratings = parseInt(ratingDropdown.params.ratings);
     const query = `SELECT * FROM restaurants WHERE "Aggregate rating" = ?`;
    
     db.all(query, [ratings], (error, result) => {
@@ -73,8 +100,8 @@ app.get("/ratings/:item", filterByRatings);
 
 //only one row
 //1-4
-const filterByPrice = (request, response) => {
-    const prices = parseInt(request.params.prices);
+const filterByPrice = (priceDropdown, response) => {
+    const prices = parseInt(priceDropdown.params.prices);
     const query = `SELECT * FROM restaurants WHERE "price range" = ?`;
    
    
@@ -86,12 +113,16 @@ const filterByPrice = (request, response) => {
       }
     
       if (result) {
+        console.log("we have a result! hm" + result);
+        console.log("we have a result! ok.." + prices);
         response.json(result);
       } else {
+        console.log("uh oh");
         response.sendStatus(404);
       }
     });
    };
+
 
 app.get("/prices/:prices", filterByPrice);
 

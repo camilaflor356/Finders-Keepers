@@ -6,12 +6,14 @@ export default {
   data() {
     return {
       restaurants: [
+      
+    ],
 
-      ],
       countryValue: "",
       cuisineValue: "",
       priceValue: "",
       ratingValue: "",
+
       countryCodes: [
         {
           India: 1,
@@ -63,22 +65,9 @@ export default {
       }
       let priceOption = this.priceValue
       if (priceOption == "any") {
-        priceOption = "";
-      }
-      if (priceOption == "$") {
-        priceOption = 1;
-      }
-      if (priceOption == "$$") {
-        priceOption = 2;
-      }
-      if (priceOption == "$$$") {
-        priceOption = 3;
-      }
-      if (priceOption == "$$$$") {
-        priceOption = 4;
-      }
+        priceOption = ""}
 
-      axios.get("http://localhost:4000/finderskeepers/" + cuisineOption).then(response => {
+      axios.get("http://localhost:4000/finderskeepers/" + cuisineOption + priceOption + ratingOption).then(response => {
         this.restaurants = response.data;
         console.log(response.data)
       })
@@ -117,6 +106,7 @@ export default {
   <body>
     <br>
     <h2>FindersKeepers</h2>
+    <p id="note">*The higher the number, the higher the price or rating.*</p>
     <!--- Change 'Select' and make one for each category (cuisine, rating, price etc.)-->
     <v-select id='countryDropdown' class="dropdowns" v-model="countryValue" label="Select a Country"
       :items="['Any', 'India', 'Australia', 'Brazil', 'Canada', 'Indonesia', 'New Zealand', 'Phillipines', 'Qatar', 'Singapore', 'South Africa', 'Sri Lanka', 'Turkey', 'United Arab Emirates', 'United Kingdom', 'United States']"></v-select>
@@ -125,17 +115,18 @@ export default {
       :items="['Any', 'Bar Food', 'Cafe', 'Desserts', 'Bakery', 'Beverages', 'Fast Food', 'Healthy Food', 'Street Food', 'Pizza', 'Burgers', 'Mediterranean', 'Italian', 'Japanese', 'Indian', 'American', 'Chinese', 'Thai', 'Mexican']"></v-select>
 
     <v-select id='priceDropdown' class="dropdowns" v-model="priceValue" label="Select a Price Range"
-      :items="['Any', '$', '$$', '$$$', '$$$$']"></v-select>
+      :items="['Any', '1', '2', '3', '4']"></v-select>
 
     <v-select id='ratingDropdown' class="dropdowns" v-model="ratingValue" label="Select a Rating"
       :items="['Any', '0', '1', '2', '3', '4']"></v-select>
 
     <button id="showButton" v-on:click="showRestaurants">Show Restaurants</button>
-
+    <br>
+    <br>
     <!-- TODO: show all restaurants here -->
     <div v-for="r in restaurants">
       <p> {{ r['Restaurant Name'] }}</p>
-      <p id="restaurantNameP" >Country: {{  countryCodes(r['Country Code']) }} | Price Range: {{ r['Price range'] }} | Rating: {{ r['Aggregate rating'] }} </p>
+      <p id="restaurantNameP" >Country: {{r['Country Code']}} | Price Range: {{ r['Price range'] }} | Rating: {{ r['Aggregate rating'] }} </p>
       <br>
       <!-- map prices back -->
     </div>
@@ -182,5 +173,10 @@ body {
 #showButton:hover {
   background: #D6CE93;
   text-decoration: #A3A380 wavy underline;
+}
+
+p{
+  text-align: center;
+  font-size: 13pt;
 }
 </style>
